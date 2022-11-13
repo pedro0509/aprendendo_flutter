@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'home_page.dart';
-
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -31,24 +29,29 @@ class _LoginPageState extends State<LoginPage> {
             Container(
               height: 10,
             ),
-            TextField(
-              onChanged: (text) {
-                email = text;
-              },
-              keyboardType: TextInputType.emailAddress,
-              decoration: InputDecoration(
-                  labelText: 'E-mail', border: OutlineInputBorder()),
+            SizedBox(
+              width: 300,
+              child: TextField(
+                onChanged: (text) {
+                  email = text;
+                },
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
+                    labelText: 'E-mail', border: OutlineInputBorder()),
+              ),
             ),
             SizedBox(
               height: 10,
             ),
-            TextField(
-              onChanged: (text) {
-                password = text;
-              },
-              decoration: InputDecoration(
-                  labelText: 'PassWord', border: OutlineInputBorder()),
-            ),
+            SizedBox(
+                width: 300,
+                child: TextField(
+                  onChanged: (text) {
+                    password = text;
+                  },
+                  decoration: InputDecoration(
+                      labelText: 'PassWord', border: OutlineInputBorder()),
+                )),
             SizedBox(
               height: 15,
             ),
@@ -61,7 +64,23 @@ class _LoginPageState extends State<LoginPage> {
                   print('Login Invalido');
                 }
               },
-              child: Text('Entrar'),
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.only(
+                  left: 40,
+                  top: 7,
+                  right: 40,
+                  bottom: 7,
+                ),
+                primary: Color.fromARGB(255, 92, 207, 152), // Background color
+                onPrimary: Colors.black,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(50), // <-- Radius
+                ),
+              ),
+              child: Text(
+                'Entrar',
+                style: TextStyle(fontSize: 30),
+              ),
             )
           ]),
         ),
