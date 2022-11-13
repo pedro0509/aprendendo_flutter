@@ -1,7 +1,7 @@
 import 'package:aprendendo_flutter/app_controller.dart';
+import 'package:aprendendo_flutter/home_page.dart';
+import 'package:aprendendo_flutter/login_page.dart';
 import 'package:flutter/material.dart';
-
-import 'home_page.dart';
 
 class AppWidget extends StatelessWidget {
   @override
@@ -16,7 +16,12 @@ class AppWidget extends StatelessWidget {
                 ? Brightness.dark
                 : Brightness.light,
           ),
-          home: HomePage(),
+          initialRoute: '/',
+          routes: {
+            '/': (constext) => LoginPage(),
+            '/home': (context) => HomePage(),
+          },
+          //  home: LoginPage(),
         );
       },
     );
